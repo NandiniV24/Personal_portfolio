@@ -1,0 +1,579 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.site-header {
+    background-color: #111;
+    padding: 10px 0;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+/* About Section */
+.about-section {
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.card-hover {
+    transition: box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    box-shadow: 0 12px 30px rgba(0, 123, 255, 0.25);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #444;
+}
+
+.about-bg {
+    background-image: url('images/bg1.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+.about-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: -1;
+}
+
+.profile-img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Blur Animation */
+.blur-in {
+    filter: blur(8px);
+    opacity: 0;
+    transform: scale(1.05);
+    animation: clearIn 1.5s ease-out forwards;
+}
+
+@keyframes clearIn {
+    to {
+        filter: blur(0);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Skill badges */
+.bg-purple {
+    background-color: #6f42c1 !important;
+    color: white;
+}
+
+/* Skills Section */
+.skills-section {
+    position: relative;
+    background: url('images/skills.avif') center center/cover no-repeat;
+    z-index: 1;
+}
+
+.skills-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: -1;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    transition: all 0.4s ease;
+    transform: scale(1);
+    cursor: default;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 123, 255, 0.3);
+}
+
+.skill-card .card-body {
+    display: flex;
+    align-items: center;
+}
+
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-right: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.15);
+    background-color: rgba(0, 123, 255, 0.15);
+}
+
+.frontend-icon {
+    color: #007bff;
+}
+
+.backend-icon {
+    color: #198754;
+    background-color: rgba(25, 135, 84, 0.1);
+}
+
+.database-icon {
+    color: #17a2b8;
+    background-color: rgba(23, 162, 184, 0.1);
+}
+
+.tools-icon {
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.softskills-icon {
+    color: #6c757d;
+    background-color: rgba(108, 117, 125, 0.1);
+}
+
+.skill-badges .badge {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 110px;
+    text-align: center;
+}
+
+.skill-badges .badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0.95;
+}
+
+/* Animations */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Projects Section */
+.projects-section {
+    position: relative;
+    background: url('images/project.avif') center center/cover no-repeat;
+    padding: 60px 0;
+    z-index: 1;
+}
+
+.projects-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 247, 250, 0.92);
+    z-index: -1;
+}
+
+/* Flip Card Container */
+.flip-card {
+    perspective: 1200px;
+    height: 400px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Inner Content with Flip Effect */
+.flip-card-inner {
+    position: relative;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+/* Apply Flip Only via JS Toggle */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg) scale(1.03);
+}
+
+/* Shared Styles for Front and Back */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Front Side */
+.flip-card-front {
+    background: #ffffff;
+    z-index: 2;
+}
+
+/* Back Side */
+.flip-card-back {
+    background: linear-gradient(135deg, #007bff, #004080);
+    color: white;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+/* Project Image Styling */
+.project-img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.flip-card-front:hover .project-img {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Title */
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+/* Icon Styling */
+.icon i {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.flip-card-front:hover .icon i {
+    transform: scale(1.2);
+}
+
+/* Tech Stack Badges */
+.stack-icons .badge {
+    font-size: 1.1rem;
+    padding: 0.5em 1em;
+    border-radius: 30px;
+    margin: 5px 6px;
+    font-weight: 600;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    letter-spacing: 0.5px;
+    cursor: help;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.stack-icons .badge:hover {
+    transform: scale(1.1);
+    opacity: 0.95;
+}
+
+/* Back Side Text */
+.flip-card-back p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+    margin-bottom: 1rem;
+}
+
+/* Project Buttons */
+.project-link,
+.project-link-alt {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-link {
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: transparent;
+}
+
+.project-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.project-link-alt {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.project-link-alt:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+/* Disabled Style */
+.project-link.disabled,
+.project-link-alt.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    border-color: #ccc;
+}
+
+/* Certifications Section */
+.certifications-section {
+    background: linear-gradient(135deg, #0d1117, #1f2937);
+    color: white;
+}
+
+.cert-card {
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+.cert-card i {
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover i {
+    transform: scale(1.15);
+}
+
+.modal-content img {
+    max-height: 450px;
+    object-fit: contain;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* Activities Section */
+.activities-section {
+    background: url('images/service.avif') center center/cover no-repeat;
+    padding: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.activities-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.93);
+    z-index: -1;
+}
+
+.activity-card {
+    transition: all 0.4s ease;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    min-height: 280px;
+}
+
+.activity-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.activity-card h5 {
+    font-size: 1.2rem;
+}
+
+.activity-card ul {
+    padding-left: 1.2rem;
+    list-style-type: disc;
+}
+
+.activity-card li {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.activity-card p {
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact-section a {
+    text-decoration: none;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+    border-radius: 10px;
+}
+
+.contact-section form button:hover {
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.2);
+}
+
+.contact-section h2 i {
+    vertical-align: middle;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .about-section .profile-img {
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .card-body {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .flip-card {
+        height: auto;
+        min-height: 460px;
+    }
+
+    .flip-card-inner,
+    .flip-card:hover .flip-card-inner {
+        transform: none !important;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        position: static;
+        transform: none;
+        backface-visibility: visible;
+    }
+
+    .project-img {
+        max-height: 160px;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+
+    .icon i {
+        font-size: 2rem;
+    }
+
+    .contact-section .row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .cert-card {
+        padding: 1.5rem;
+    }
+
+    .cert-card h5 {
+        font-size: 1.1rem;
+    }
+
+    .cert-card i {
+        font-size: 2rem;
+    }
+
+    .modal-content img {
+        max-height: 300px;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+}
